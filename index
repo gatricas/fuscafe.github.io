@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Orgánico El Remanente - Fusagasugá</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- Para iconos -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f4f4f4 0%, #e8d5b7 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0 0;
+        }
+        nav {
+            background-color: #A0522D;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            color: #FFD700;
+            transform: scale(1.1);
+        }
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'); /* Imagen de plantación de café orgánico */
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            z-index: 1;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .about, .process, .products, .contact {
+            margin-bottom: 60px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        h2 {
+            color: #8B4513;
+            border-bottom: 3px solid #A0522D;
+            padding-bottom: 10px;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .about img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .process ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .process li {
+            width: 45%;
+            margin: 10px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .process li:hover {
+            transform: translateY(-5px);
+        }
+        .process li img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .products ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .products li {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+        .products li:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .products li img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .products li strong {
+            color: #8B4513;
+            font-size: 1.3em;
+        }
+        .products li p {
+            margin: 10px 0;
+        }
+        .contact {
+            text-align: center;
+        }
+        .contact p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        .contact i {
+            margin-right: 10px;
+            color: #8B4513;
+        }
+        footer {
+            background: linear-gradient(135deg, #333 0%, #555 100%);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            box-shadow: 0 -4px 8px rgba(0,0,0,0.2);
+        }
+        footer p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+        /* Media queries para responsividad en móviles y tablets */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+            header p {
+                font-size: 1.1em;
+            }
+            nav a {
+                margin: 0 10px;
+                font-size: 1em;
+            }
+            .hero {
+                height: 400px;
+            }
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            section {
+                padding: 20px 15px;
+            }
+            .about, .process, .products, .contact {
+                padding: 20px;
+                margin-bottom: 40px;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            .process ul {
+                flex-direction: column;
+            }
+            .process li {
+                width: 100%;
+                margin: 10px 0;
+            }
+            .products ul {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .products li {
+                padding: 15px;
+            }
+            .contact p {
+                font-size: 1em;
+            }
+            footer {
+                padding: 20px 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            nav {
+                padding: 10px;
+            }
+            nav a {
+                margin: 0 5px;
+                font-size: 0.9em;
+            }
+            .hero h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            .process li img {
+                height: 120px;
+            }
+            .products li img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-coffee"></i> Café Orgánico El Remanente</h1>
+        <p>El sabor puro de la naturaleza en cada grano, desde la finca El Remanente, Fusagasugá</p>
+    </header>
+    <nav>
+        <a href="#about"><i class="fas fa-info-circle"></i> Sobre Nosotros</a>
+        <a href="#process"><i class="fas fa-cogs"></i> Nuestro Proceso</a>
+        <a href="#products"><i class="fas fa-shopping-bag"></i> Productos y Precios</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contacto</a>
+    </nav>
+    <div class="hero">
+        <h1>Descubre el Café Orgánico Más Puro</h1>
+    </div>
+    <section id="about" class="about">
+        <h2>Sobre Nosotros</h2>
+        <img src="caf4.jpg" alt="Café orgánico en El Remanente">
+        <p>En Café Orgánico El Remanente, ubicada en la finca El Remanente en Fusagasugá, Cundinamarca, nos apasiona cultivar y procesar café de la más alta calidad. Nuestro compromiso con la agricultura orgánica significa que cada grano es cultivado sin pesticidas ni químicos sintéticos, respetando el equilibrio natural de la tierra y preservando el medio ambiente. Fundada por familias locales con décadas de experiencia, nuestra finca se encuentra en un entorno prístino, rodeado de montañas verdes y ríos cristalinos, lo que nos permite ofrecer un café que no solo es delicioso, sino también sostenible.</p>
+        <p>Creemos en la transparencia y la calidad. Nuestros granos rojos son cosechados a mano en su punto óptimo de madurez, asegurando un sabor rico, con notas de chocolate, nuez y un toque de acidez natural. Ven a visitarnos y siente la calidez de nuestra comunidad cafetera, donde cada taza cuenta una historia de dedicación y amor por la tierra. ¡Únete a nosotros en esta aventura orgánica y descubre por qué nuestro café es el favorito de los amantes del buen gusto!</p>
+    </section>
+    <section id="process" class="process">
+        <h2>Nuestro Proceso Artesanal</h2>
+        <p>Seguimos un método tradicional y meticuloso, desde la cosecha hasta el empaque, para garantizar que cada grano conserve su esencia orgánica y su sabor excepcional. Este proceso no solo resalta la pureza del café, sino que también apoya prácticas sostenibles que benefician a la comunidad y el planeta.</p>
+        <ul>
+            <li>
+                <img src="pepascafe.jpg" alt="Cosecha de café rojo">
+                <strong>Cosecha:</strong> Recogemos manualmente los granos de café rojo maduros, seleccionando solo los mejores para asegurar frescura y calidad orgánica.
+            </li>
+            <li>
+                <img src="molienda.jpg" alt="Molienda de granos">
+                <strong>Molienda:</strong> Utilizamos molinos tradicionales para moler los granos frescos, liberando aromas naturales sin alterar su composición orgánica.
+            </li>
+            <li>
+                <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Deseresado del café">
+                <strong>Deseresado:</strong> Eliminamos la pulpa y la cáscara con cuidado, obteniendo granos limpios listos para el siguiente paso, manteniendo su integridad orgánica.
+            </li>
+            <li>
+                <img src="caf4.jpg" alt="Procesamiento y empaque">
+                <strong>Procesamiento y Empaque:</strong> Secamos y tostamos a baja temperatura para realzar sabores, luego empacamos al vacío en presentaciones ecológicas, listas para llevar el café orgánico a tu hogar.
+            </li>
+        </ul>
+        <p>Este enfoque artesanal no solo produce un café superior, sino que también minimiza el impacto ambiental, promoviendo la biodiversidad y el bienestar de nuestros agricultores. ¡Prueba la diferencia en cada sorbo!</p>
+    </section>
+    <section id="products" class="products">
+        <h2>Productos y Precios</h2>
+        <p>Ofrecemos nuestro café orgánico empacado en presentaciones de 250g o 500g, o ambos juntos en un paquete especial. Cada producto es una invitación a experimentar la riqueza de El Remanente. Precios en pesos colombianos (COP), con envíos gratuitos en Fusagasugá para compras superiores a $50,000.</p>
+        <ul>
+            <li>
+                <img src="caf1.jpg" alt="Café orgánico 250g">
+                <strong>Café Orgánico 250g:</strong> $15,000<br>
+                <p>Presentación compacta de café molido orgánico, ideal para probar o para uso diario. Notas de vainilla y caramelo, tostado lentamente para un sabor gourmet.</p>
+            </li>
+            <li>
+                <img src="caf2.jpg" alt="Café orgánico 500g">
+                <strong>Café Orgánico 500g:</strong> $25,000<br>
+                <p>Presentación más grande de café molido orgánico, perfecta para familias. Sabor equilibrado con toques de chocolate y nuez, cultivado y procesado orgánicamente.</p>
+            </li>
+            <li>
+                <img src="caf3.jpg" alt="Paquete con ambos">
+                <strong>Paquete Orgánico (250g + 500g):</strong> $35,000<br>
+                <p>El paquete completo con ambas presentaciones: 250g y 500g de café molido orgánico. Ideal para regalar o para tener variedad en casa. ¡Ahorra y disfruta más!</p>
+            </li>
+        </ul>
+        <p>Para pedidos personalizados o mayoristas, contáctanos para ofertas especiales. Todos nuestros productos son libres de gluten y aditivos, enfocados en la salud y el bienestar.</p>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Contacto</h2>
+        <p><i class="fas fa-map-marker-alt"></i><strong>Ubicación:</strong> Finca El Remanente, Fusagasugá, Cundinamarca, Colombia. ¡Ven a nuestra finca y conoce el proceso en vivo!</p>
+        <p><i class="fas fa-phone"></i><strong>Teléfono:</strong> +57 300 5540236</p>
+        <p><i class="fas fa-envelope"></i><strong>Email:</strong> omaric65@gmail.com</p>
+        <p><i class="fas fa-clock"></i><strong>Horarios:</strong> Lunes a Sábado: 8:00 AM - 6:00 PM. Domingos: Citas previas para tours y degustaciones.</p>
+        <p>Ofrecemos degustaciones gratuitas, tours guiados por la finca y asesoría personalizada. ¡Contáctanos hoy y comienza tu viaje hacia el mejor café orgánico!</p>
+    </section>
+    <footer>
+        <p>&copy; 2025 Café Orgánico El Remanente. Todos los derechos reservados. Hecho con pasión por el café colombiano y el medio ambiente. <i class="fas fa-leaf"></i></p>
+    </footer>
+</body>
+</html>
